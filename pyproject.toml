@@ -1,10 +1,14 @@
 [build-system]
-requires = ["setuptools>=80", "setuptools-scm>8"]
+requires = [
+    "setuptools>=80", 
+    #"setuptools-scm>8"
+]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "tank-fill-modbus"
-dynamic = ["version"]
+name = "tank_fill_modbus"
+#dynamic = ["version"]
+version = "1.0.0"
 authors =[{name = "Bradley Lane Kicklighter, P.E.", email = "blkickligh@usi.edu"}]
 description = "Tank fill simulation that communicates with a PLC via Modbus TCP."
 dependencies = [
@@ -17,14 +21,17 @@ license-files = ["LICEN[CS]E.*"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Programming Language :: Python",
-    "License :: OSI Approved :: MIT License",
+    #"License :: OSI Approved :: MIT License",
     "Natural Language :: English",
     "Operating System :: Microsoft :: Windows :: Windows 10",
     "Operating System :: Microsoft :: Windows :: Windows 11"
 ]
 
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [project.scripts]
-tankfillmodbus = "tank-fill-modbus.tankfillmodbusapp:main"
+tankfillmodbus = "tank_fill_modbus.tankfillmodbus:main"
 
 [project.urls]
 Repository = "https://github.com/blkickli/TankFillModbus"
