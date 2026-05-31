@@ -24,7 +24,7 @@ classifiers = [
 ]
 
 [project.scripts]
-tankfillmodbus = "tank-fill-modbus:main"
+tankfillmodbus = "tank-fill-modbus.tankfillmodbusapp:main"
 
 [project.urls]
 Repository = "https://github.com/blkickli/TankFillModbus"

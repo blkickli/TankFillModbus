@@ -6,14 +6,15 @@ Brad L. Kicklighter, P.E.
 '''
 
 __author__ = "Brad L. Kicklighter, P.E."
-__version__ = "2023.01.08"
+__version__ = "2026.05.31"
 
 import math
-from unitconv import *
-from repeatedtimer import *
-from physical_constants import *
-import userpaths
 import csv
+import time
+from userpaths import get_my_documents
+from repeatedtimer import RepeatedTimer
+from physical_constants import DENSITY_WATER
+
 
 class TankFill(object):
   '''
@@ -55,7 +56,7 @@ class TankFill(object):
     self.tau = tau  # System time constant in seconds (s)
     self.max_inflow = max_inflow  # Maximum input flow rate in kilograms per second (kg/s)
     self.delta_t = delta_t  # Simulation time step in seconds (s)
-    self.documents_path = userpaths.get_my_documents()
+    self.documents_path = get_my_documents()
     
     # PLC Properties
     self.max_plc_pump_speed = max_plc_pump_speed  # Maximum pump speed from PLC

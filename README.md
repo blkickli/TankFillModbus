@@ -25,7 +25,11 @@ Table 1: Variables exchanged between simulation program and PLC, designated data
 | Set Point    | DS3           | 0x0002         | 0 to 10000 | Write          |
 
 ## CLICK PLC Modbus Communication
-The CLICK PLC must have the Modbus TCP Server enabled. This should be enabled by default. To verify that it is enabled: Setup -> Modbus TCP.
+The CLICK PLC must have the Modbus TCP Server enabled. This should be enabled by default. To verify that it is enabled: Setup -> Modbus TCP (see Figure 1).
+
+![CLICK Modbus TCP Setup dialog showing the Enable Modbus TCP Server option being checked.](.assets/images/Modbus TCP Setup.png)
+
+Figure 1: Modbus TCP Setup showing that the Modbus TCP Server is enabled.
 
 ## Using the Simulation Program
 The PC must have Python and this package installed. When this package is installed, a command line script is created to run this program.
@@ -45,7 +49,15 @@ If the trainer is not attached and powered on prior to running the program, the 
 
 While the program is running, it is simulating the tank, capturing data, and communicating with the PLC. The state of the tank is updated by the simulation every 100 ms, data is collected every time the tank state is updated, and the program sends and receives data with the PLC continuously.
 
+Figure 2 shows the GUI for the program.
+
+![The graphical user interface (GUI) for the program is shown.](.assets/imnages/GUI.png)
+
+Figure 2: Tank Fill Modbus graphical user interface (GUI). The program name and version are displayed on the fist line of the messages area followed by the "Connected" message that lists the IP address of the PLC.
+
 **Message Area** — Messages are displayed in the area below the window title.
+
+**Tank Area** - An outline of the tank is shown and the blue area indicates the height of the water in the tank (in Figure 2, the tank is empty).
 
 **Clear Data** — Pressing this button clears the current list of collected data and then resumes collecting data. After the data has been cleared, "Data cleared" is displayed in the message area.
 
@@ -60,7 +72,11 @@ You may clear and save data as often as needed while using the system.
 Note that you will have to manually close the console window after exiting from the program.
 
 ### Data File
-The CSV data file contains data records captured each time the program calculates a new system state each time step. Each data record has the time in seconds since the program started, the pump speed, the water height, and the set point. Microsoft Excel can open CSV files directly. The file is named `simulation data YYmmdd-HHMMSS.csv` where `YYmmdd-HHMMSS` is the current date and time when the file was created.
+The CSV data file contains data records captured each time the program calculates a new system state each time step. Each data record has the time in seconds since the program started, the pump speed, the water height, and the set point. Microsoft Excel can open CSV files directly. The file is named `simulation data YYmmdd-HHMMSS.csv` where `YYmmdd-HHMMSS` is the current date and time when the file was created. Figure 3 shows an example of a CSV file opened in Microsoft Excel.
+
+![The first few rows of CSV data are shown in Excel.](.assets/images/Excel.png)
+
+Figure 3: Example of a CSV data file opened in Microsoft Excel.
 
 ## Errors
 If the program shows errors in the console window, send them to your instructor.

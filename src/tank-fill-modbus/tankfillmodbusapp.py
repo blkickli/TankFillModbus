@@ -1,5 +1,5 @@
 '''
-TankFillModbus - Tank fill simulation that communicates with a PLC via Modbus RTU
+TankFillModbus - Tank fill simulation that communicates with a PLC via Modbus TCP.
 tankfillmodbusapp.py
 
 Brad L. Kicklighter, P.E.
@@ -7,13 +7,12 @@ Brad L. Kicklighter, P.E.
 '''
 
 __author__ = "Brad L. Kicklighter, P.E."
-__version__ = "2024.11.18"
+__version__ = "1.0.0"
 
-from tankfill import *
-import pymodbus.client as ModbusClient
-import time
 import tkinter as tk
 from tkinter import ttk
+import pymodbus.client as ModbusClient
+from tankfill import TankFill
 
 # Modbus TCP Constants
 HOST = '192.168.1.44'         # PLC IP address
@@ -133,6 +132,7 @@ class App(tk.Tk):
     self.exiting = True
     if self.client != None and self.client.is_socket_open() == True:
       self.client.close()
+    self.t.end()
     self.destroy()
     
   def update_tank_animation(self):
