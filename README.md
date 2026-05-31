@@ -27,7 +27,7 @@ Table 1: Variables exchanged between simulation program and PLC, designated data
 ## CLICK PLC Modbus Communication
 The CLICK PLC must have the Modbus TCP Server enabled. This should be enabled by default. To verify that it is enabled: Setup -> Modbus TCP (see Figure 1).
 
-![CLICK Modbus TCP Setup dialog showing the Enable Modbus TCP Server option being checked.](.assets/images/Modbus TCP Setup.png)
+![CLICK Modbus TCP Setup dialog showing the Enable Modbus TCP Server option being checked.](./assets/images/Modbus TCP Setup.png)
 
 Figure 1: Modbus TCP Setup showing that the Modbus TCP Server is enabled.
 
@@ -51,7 +51,7 @@ While the program is running, it is simulating the tank, capturing data, and com
 
 Figure 2 shows the GUI for the program.
 
-![The graphical user interface (GUI) for the program is shown.](.assets/imnages/GUI.png)
+![The graphical user interface (GUI) for the program is shown.](./assets/imnages/GUI.png)
 
 Figure 2: Tank Fill Modbus graphical user interface (GUI). The program name and version are displayed on the fist line of the messages area followed by the "Connected" message that lists the IP address of the PLC.
 
@@ -74,7 +74,7 @@ Note that you will have to manually close the console window after exiting from 
 ### Data File
 The CSV data file contains data records captured each time the program calculates a new system state each time step. Each data record has the time in seconds since the program started, the pump speed, the water height, and the set point. Microsoft Excel can open CSV files directly. The file is named `simulation data YYmmdd-HHMMSS.csv` where `YYmmdd-HHMMSS` is the current date and time when the file was created. Figure 3 shows an example of a CSV file opened in Microsoft Excel.
 
-![The first few rows of CSV data are shown in Excel.](.assets/images/Excel.png)
+![The first few rows of CSV data are shown in Excel.](./assets/images/Excel.png)
 
 Figure 3: Example of a CSV data file opened in Microsoft Excel.
 
