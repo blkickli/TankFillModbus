@@ -12,7 +12,7 @@ __version__ = "1.0.0"
 import tkinter as tk
 from tkinter import ttk
 import pymodbus.client as ModbusClient
-from tankfill import TankFill
+from .tankfill import TankFill
 
 # Modbus TCP Constants
 HOST = '192.168.1.44'         # PLC IP address

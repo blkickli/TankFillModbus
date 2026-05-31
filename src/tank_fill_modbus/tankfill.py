@@ -12,8 +12,8 @@ import math
 import csv
 import time
 from userpaths import get_my_documents
-from repeatedtimer import RepeatedTimer
-from physical_constants import DENSITY_WATER
+from .repeatedtimer import RepeatedTimer
+from .physical_constants import DENSITY_WATER
 
 
 class TankFill(object):
