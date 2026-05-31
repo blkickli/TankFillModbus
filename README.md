@@ -27,7 +27,7 @@ Table 1: Variables exchanged between simulation program and PLC, designated data
 ## CLICK PLC Modbus Communication
 The CLICK PLC must have the Modbus TCP Server enabled. This should be enabled by default. To verify that it is enabled: Setup -> Modbus TCP (see Figure 1).
 
-![CLICK Modbus TCP Setup dialog showing the Enable Modbus TCP Server option being checked.](./assets/images/Modbus TCP Setup.png)
+![CLICK Modbus TCP Setup dialog showing the Enable Modbus TCP Server option being checked.](./assets/images/Modbus_TCP_Setup.png)
 
 Figure 1: Modbus TCP Setup showing that the Modbus TCP Server is enabled.
 
@@ -51,7 +51,7 @@ While the program is running, it is simulating the tank, capturing data, and com
 
 Figure 2 shows the GUI for the program.
 
-![The graphical user interface (GUI) for the program is shown.](./assets/imnages/GUI.png)
+![The graphical user interface (GUI) for the program is shown.](./assets/images/GUI.png)
 
 Figure 2: Tank Fill Modbus graphical user interface (GUI). The program name and version are displayed on the fist line of the messages area followed by the "Connected" message that lists the IP address of the PLC.
 
