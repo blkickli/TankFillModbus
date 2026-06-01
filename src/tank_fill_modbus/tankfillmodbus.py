@@ -1,13 +1,13 @@
 '''
 TankFillModbus - Tank fill simulation that communicates with a PLC via Modbus TCP.
-tankfillmodbusapp.py
+tankfillmodbus.py
 
 Brad L. Kicklighter, P.E.
 1-3-2022
 '''
 
 __author__ = "Brad L. Kicklighter, P.E."
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 import tkinter as tk
 from tkinter import ttk
@@ -65,7 +65,8 @@ class App(tk.Tk):
     self.save_exit_btn.grid(row=1, column=2, padx=5, pady=5)
     self.exit_btn = tk.Button(self, text='Exit', command=self.exit_app)
     self.exit_btn.grid(row=1, column=3, padx = 5, pady=5)
-    self.write_to_log('tankfillmodbusapp ')
+    self.protocol("WM_DELETE_WINDOW", self.exit_app)
+    self.write_to_log('tankfillmodbus ')
     self.write_to_log(__version__)
     self.write_to_log('\n')
     self.client = ModbusClient.ModbusTcpClient(host=HOST)
@@ -132,7 +133,8 @@ class App(tk.Tk):
     self.exiting = True
     if self.client != None and self.client.is_socket_open() == True:
       self.client.close()
-    self.t.end()
+    if self.t != None:
+      self.t.end()
     self.destroy()
     
   def update_tank_animation(self):

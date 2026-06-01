@@ -32,7 +32,7 @@ The CLICK PLC must have the Modbus TCP Server enabled. This should be enabled by
 Figure 1: Modbus TCP Setup showing that the Modbus TCP Server is enabled.
 
 ## Using the Simulation Program
-The PC must have Python and this package installed. When this package is installed, a command line script is created to run this program.
+The PC must have Python and this package (tank_fill_modbus) installed. When this package is installed, a command line script is created to run this program (see Running the Simulation Program).
 
 ### Before Running the Simulation Program
 Before running the program, perform the following steps:
@@ -41,13 +41,13 @@ Before running the program, perform the following steps:
 3. Download the program to the HMI, if needed.
 
 ### Running the Simulation Program
-The program has a graphical user interface (GUI) and will also open a console window when run. To run the program, open a command prompt and enter the following command: 
+The program has a graphical user interface (GUI). To run the program, open a command prompt and enter the following command: 
 ```shell
 tankfillmodbus
 ```
 If the trainer is not attached and powered on prior to running the program, the program will display a message ("Not connected") and you must exit the program, connect the trainer, power up the trainer, and run the program again.
 
-While the program is running, it is simulating the tank, capturing data, and communicating with the PLC. The state of the tank is updated by the simulation every 100 ms, data is collected every time the tank state is updated, and the program sends and receives data with the PLC continuously.
+While the program is running, it is simulating the tank, capturing data, and communicating with the PLC. The state of the tank is updated by the simulation every 50 ms, data is collected every time the tank state is updated, and the program sends and receives data with the PLC continuously.
 
 Figure 2 shows the GUI for the program.
 
@@ -57,19 +57,17 @@ Figure 2: Tank Fill Modbus graphical user interface (GUI). The program name and 
 
 **Message Area** — Messages are displayed in the area below the window title.
 
-**Tank Area** - An outline of the tank is shown and the blue area indicates the height of the water in the tank (in Figure 2, the tank is empty).
+**Tank Area** - An outline of the tank is shown and the blue area indicates the height of the water in the tank.
 
 **Clear Data** — Pressing this button clears the current list of collected data and then resumes collecting data. After the data has been cleared, "Data cleared" is displayed in the message area.
 
-**Save Data** — Pressing this button causes the current list of collected data to be saved to a comma-separated values (CSV) data file in your documents folder (the file path is displayed in the messages area). After saving the data, the list is cleared, data collection resumes, and the path to the file along with the file name is displayed in the message area. CSV files are stored in your documents folder as reported by Windows.
+**Save Data** — Pressing this button causes the current list of collected data to be saved to a comma-separated values (CSV) data file in your documents folder. After saving the data, the list is cleared, data collection resumes, and the path to the file along with the file name is displayed in the message area. CSV files are stored in your documents folder as reported by Windows.
 
 **Save Data & Exit** — Pressing this button saves the collected data to a CSV file and the program exits.
 
 **Exit** — Pressing this button causes the program to exit without saving collected data.
 
 You may clear and save data as often as needed while using the system.
-
-Note that you will have to manually close the console window after exiting from the program.
 
 ### Data File
 The CSV data file contains data records captured each time the program calculates a new system state each time step. Each data record has the time in seconds since the program started, the pump speed, the water height, and the set point. Microsoft Excel can open CSV files directly. The file is named `simulation data YYmmdd-HHMMSS.csv` where `YYmmdd-HHMMSS` is the current date and time when the file was created. Figure 3 shows an example of a CSV file opened in Microsoft Excel.
